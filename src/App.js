@@ -62,12 +62,14 @@ class App extends React.Component {
 		let fileString = "";
 		
 		for (const i in notes) {
-			if (i == 0) {
-				let obj =  + notes[i].date + "\r\n" + notes[i].noteTitle + "\r\n" + notes[i].noteDescription + "\r\n\r\n";
+			console.log(notes[i].noteTitle)
+			if (i == notes.length - 1) {
+				let obj = notes[i].date + "\r\n" + notes[i].noteTitle + "\r\n" + notes[i].noteDescription + "\r\n\r\n";
+				fileString += obj;
+			} else {
+				let obj = notes[i].date + "\r\n" + notes[i].noteTitle + "\r\n" + notes[i].noteDescription;
 				fileString += obj;
 			}
-			let obj = notes[i].date + "\r\n" + notes[i].noteTitle + "\r\n" + notes[i].noteDescription;
-			fileString += obj;
 		}
 
 		let element = document.createElement('a');
